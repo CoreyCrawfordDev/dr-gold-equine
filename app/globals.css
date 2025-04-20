@@ -20,7 +20,7 @@ body {
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply text-secondary font-bold tracking-tight;
+    @apply text-gray-800 font-bold tracking-tight;
   }
 
   h1 {
@@ -103,4 +103,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--primary-light));
-} 
+}
