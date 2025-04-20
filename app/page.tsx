@@ -34,7 +34,7 @@ export default function Home() {
               DVM, Diplomate ACVIM (Large Animal), Diplomate ACVECC (Large Animal)
             </p>
             <p className="text-lg mb-8 text-white/80">
-              Providing exceptional care for horses and large animals in Montana.
+              Providing exceptional care for horses and large animals.
             </p>
             <Link 
               href="#contact"
