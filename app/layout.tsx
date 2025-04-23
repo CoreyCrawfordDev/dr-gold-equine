@@ -1,57 +1,18 @@
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Providers from './providers'
 import './globals.css'
-import JsonLd from './components/JsonLd'
+import Navigation from './components/Navigation'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#2C5282',
-}
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://drgoldequine.com'),
-  title: 'Dr. Jenifer Gold, DVM | Equine Internal Medicine Specialist',
-  description: 'Dr. Jenifer Gold, DVM, is a board-certified specialist in equine internal medicine and emergency/critical care. Serving horses, cattle, camelids, and small ruminants in Montana.',
-  keywords: 'equine veterinarian, horse doctor, internal medicine specialist, emergency care, critical care, Montana veterinarian, equine specialist, Missoula veterinarian, large animal vet, horse specialist, equine internal medicine, emergency critical care, horse emergency, equine emergency',
-  authors: [{ name: 'Dr. Jenifer Gold' }],
+  title: 'Dr. Jenifer Gold - Consulting Services',
+  description: 'Professional consulting services by Dr. Jenifer Gold, specializing in organizational development and leadership.',
+  keywords: 'consulting, organizational development, leadership, Dr. Gold, Montana',
   openGraph: {
-    title: 'Dr. Jenifer Gold, DVM | Equine Internal Medicine Specialist',
-    description: 'Board-certified specialist in equine internal medicine and emergency/critical care. Serving horses and large animals in Montana.',
+    title: 'Dr. Jenifer Gold - Consulting Services',
+    description: 'Professional consulting services by Dr. Jenifer Gold, specializing in organizational development and leadership.',
     type: 'website',
-    locale: 'en_US',
-    siteName: 'Dr. Jenifer Gold, DVM',
-    images: [
-      {
-        url: '/images/dr-gold-caring.JPG',
-        width: 1200,
-        height: 630,
-        alt: 'Dr. Jenifer Gold providing care to a horse',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dr. Jenifer Gold, DVM | Equine Internal Medicine Specialist',
-    description: 'Board-certified specialist in equine internal medicine and emergency/critical care.',
-    images: ['/images/dr-gold-caring.JPG'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: 'https://drgoldequine.com',
   },
 }
 
@@ -62,13 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <JsonLd />
-      </head>
-      <body className={`${inter.variable} font-sans`}>
-        <Providers>
+      <body className={inter.className}>
+        <Navigation />
+        <main className="min-h-screen">
           {children}
-        </Providers>
+        </main>
       </body>
     </html>
   )
