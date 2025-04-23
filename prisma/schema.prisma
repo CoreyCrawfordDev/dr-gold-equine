@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -24,7 +24,7 @@ model User {
 }
 
 model Content {
-  id        String   @id @default(uuid())
+  id        String   @id @default(cuid())
   title     String
   content   String
   section   String
