@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import Providers from './providers'
 import './globals.css'
 import JsonLd from './components/JsonLd'
 
@@ -64,7 +65,11 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className={`${inter.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} font-sans`}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 } 

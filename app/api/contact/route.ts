@@ -16,12 +16,11 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create email content
+    // Prepare email content
     const msg = {
-      to: 'golddvm@gmail.com', // Dr. Gold's email
-      from: 'website@drgoldvet.com', // Your verified sender email
-      replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+      to: process.env.CONTACT_EMAIL || 'default@example.com', // Dr. Gold's email
+      from: process.env.FROM_EMAIL || 'noreply@example.com', // Verified sender
+      subject: `New Consultation Request from ${name}`,
       text: `
 Name: ${name}
 Email: ${email}
@@ -31,11 +30,11 @@ Message:
 ${message}
       `,
       html: `
-<h2>New Contact Form Submission</h2>
+<h2>New Consultation Request</h2>
 <p><strong>Name:</strong> ${name}</p>
 <p><strong>Email:</strong> ${email}</p>
 <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-<p><strong>Message:</strong></p>
+<h3>Message:</h3>
 <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     };
@@ -47,7 +46,7 @@ ${message}
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send message' },
       { status: 500 }
     );
   }
