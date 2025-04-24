@@ -6,36 +6,54 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[600px] text-white py-32 overflow-hidden">
+        <div className="absolute inset-0">
           <Image
-            src="/images/hero-bg.jpg"
-            alt="Dr. Gold consulting"
+            src="/images/mountains.jpg"
+            alt="Scenic Montana mountains landscape serving as the website background"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
+            sizes="100vw"
+            quality={90}
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80"></div>
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5"></div>
         </div>
-        
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Dr. Jenifer Gold
-          </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            Organizational Development & Leadership Consulting
-          </p>
-          <Link 
-            href="/contact"
-            className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors shadow-md hover:shadow-lg"
-          >
-            Get Started
-          </Link>
+        <div className="container relative">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <h1 className="text-white mb-6 text-5xl md:text-6xl lg:text-7xl font-bold">
+              Dr. Jenifer Gold
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-white/90">
+              Expert Veterinary Consultation Services
+            </p>
+            <p className="text-lg mb-2 text-white/80">
+              DVM, Diplomate ACVIM (Large Animal), Diplomate ACVECC (Large Animal)
+            </p>
+            <p className="text-lg mb-8 text-white/80">
+              Specialized care for horses and large animals through professional consultation
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="#services" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                View Services
+              </Link>
+              <Link href="/contact" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                Request Consultation
+              </Link>
+              <Link href="/bio" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                Bio
+              </Link>
+              <Link href="/contact" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4">
+      <section id="services" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Our Services
@@ -72,15 +90,27 @@ export default function Home() {
 
 const services = [
   {
-    title: "Organizational Development",
-    description: "Transform your organization through strategic planning, process improvement, and cultural enhancement."
+    title: "Equine Internal Medicine",
+    description: "Expert consultation for respiratory disease, EIPH, neonatology, endocrine disorders, and GI conditions in horses."
   },
   {
-    title: "Leadership Consulting",
-    description: "Develop effective leadership skills and strategies to drive organizational success."
+    title: "Emergency & Critical Care",
+    description: "Specialized care for emergency response, critical care management, pain management, and post-operative care."
   },
   {
-    title: "Team Building",
-    description: "Build high-performing teams through targeted interventions and development programs."
+    title: "Phone/Text Consults",
+    description: "Remote consultation services for veterinarians and animal owners throughout Montana."
+  },
+  {
+    title: "Chart Reviews",
+    description: "Detailed review of medical records and treatment plans for optimal patient care."
+  },
+  {
+    title: "Case Management",
+    description: "Comprehensive case management for complex medical conditions in horses and large animals."
+  },
+  {
+    title: "Professional Mentoring",
+    description: "Guidance and support for veterinary professionals seeking to enhance their expertise."
   }
 ] 
