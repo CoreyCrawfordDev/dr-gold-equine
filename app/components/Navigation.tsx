@@ -23,6 +23,16 @@ export default function Navigation() {
           
           <div className="flex items-center gap-6">
             <Link 
+              href="/about" 
+              className={`font-medium transition-colors ${
+                isActive('/about') 
+                  ? 'text-primary' 
+                  : 'text-gray-600 hover:text-primary'
+              }`}
+            >
+              About Me
+            </Link>
+            <Link 
               href="/" 
               className={`font-medium transition-colors ${
                 isActive('/') 
@@ -31,16 +41,6 @@ export default function Navigation() {
               }`}
             >
               Home
-            </Link>
-            <Link 
-              href="/bio" 
-              className={`font-medium transition-colors ${
-                isActive('/bio') 
-                  ? 'text-primary' 
-                  : 'text-gray-600 hover:text-primary'
-              }`}
-            >
-              Bio
             </Link>
             <Link 
               href="/contact" 

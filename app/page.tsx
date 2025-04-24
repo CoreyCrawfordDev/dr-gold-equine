@@ -35,14 +35,11 @@ export default function Home() {
               Specialized care for horses and large animals through professional consultation
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="/about" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                About Me
+              </Link>
               <Link href="#services" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                 View Services
-              </Link>
-              <Link href="/contact" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Request Consultation
-              </Link>
-              <Link href="/bio" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                Bio
               </Link>
               <Link href="/contact" className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                 Contact
