@@ -71,7 +71,7 @@ export default function ContactForm() {
           urgency: formData.urgency,
           message: formData.message,
           title: 'Veterinary Consultation Request',
-          to_email: 'contact@drgoldequinemed.com'
+          to_email: 'golddvm@gmail.com'
         },
         'ygXJArU5YKMNaPvk_'
       );
