@@ -46,8 +46,8 @@ body {
   }
 
   .btn-primary {
-  @apply bg-blue-700 text-white hover:bg-blue-600;
-}
+    @apply bg-blue-700 text-white hover:bg-blue-600;
+  }
 
   .btn-accent {
     @apply bg-accent text-white hover:bg-accent/90;
@@ -64,6 +64,39 @@ body {
   .label {
     @apply block text-sm font-medium text-gray-700 mb-1;
   }
+}
+
+/* Custom prose styles for blog content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply mb-8 mt-12;
+}
+
+.prose h2 {
+  @apply mb-6 mt-10;
+}
+
+.prose h3 {
+  @apply mb-4 mt-8;
+}
+
+.prose p {
+  @apply mb-6;
+}
+
+.prose ul {
+  @apply mb-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 my-6 italic;
 }
 
 /* Custom animations */

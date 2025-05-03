@@ -10,6 +10,15 @@ interface BlogPost {
   slug: string;
 }
 
+// This function runs at build time
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), 'content/blog');
+  const fileNames = fs.readdirSync(postsDirectory).filter(file => file !== 'README.md');
+  return fileNames.map(fileName => ({
+    slug: fileName.replace(/\.md$/, ''),
+  }));
+}
+
 export default function BlogPage() {
   // Get all blog posts
   const postsDirectory = path.join(process.cwd(), 'content/blog');

@@ -52,6 +52,16 @@ export default function Navigation() {
             >
               Contact
             </Link>
+            <Link 
+              href="/blog" 
+              className={`font-medium transition-colors ${
+                isActive('/blog') 
+                  ? 'text-primary' 
+                  : 'text-gray-600 hover:text-primary'
+              }`}
+            >
+              Blog
+            </Link>
           </div>
         </div>
       </div>
