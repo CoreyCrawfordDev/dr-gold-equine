@@ -1,6 +1,11 @@
-# Allow all web crawlers
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://drgoldequine.com/sitemap.xml 
+Sitemap: https://drgoldequinemed.com/sitemap.xml
+
+# Prevent crawling of admin or private areas if they exist in the future
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/ 
