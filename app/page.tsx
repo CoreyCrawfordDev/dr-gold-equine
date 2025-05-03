@@ -55,6 +55,11 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Our Services
           </h2>
+          <div className="text-center mb-8">
+            <p className="text-lg text-gray-600">
+              All consultation services start at $250/hour
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
@@ -96,7 +101,7 @@ const services = [
   },
   {
     title: "Phone/Text Consults",
-    description: "Remote consultation services for veterinarians and animal owners throughout Montana."
+    description: "Remote consultation services for veterinarians throughout the US and Canada."
   },
   {
     title: "Chart Reviews",

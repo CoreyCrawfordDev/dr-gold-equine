@@ -13,6 +13,8 @@ export default function ContactForm() {
     email: '',
     phone: '',
     location: '', // City/State
+    license_number: '', // Veterinary license number
+    license_state: '', // State/Province of license
     horseInfo: '', // Horse details
     serviceType: '', // Type of service needed
     preferredContact: 'email', // Preferred contact method
@@ -61,6 +63,8 @@ export default function ContactForm() {
           from_email: formData.email,
           phone: formattedPhone,
           location: formData.location,
+          license_number: formData.license_number,
+          license_state: formData.license_state,
           horse_info: formData.horseInfo,
           service_type: formData.serviceType,
           preferred_contact: formData.preferredContact,
@@ -87,6 +91,8 @@ export default function ContactForm() {
         email: '',
         phone: '',
         location: '',
+        license_number: '',
+        license_state: '',
         horseInfo: '',
         serviceType: '',
         preferredContact: 'email',
@@ -122,11 +128,12 @@ export default function ContactForm() {
       className="space-y-6"
       aria-labelledby="contact-form-title"
     >
-      <h3 id="contact-form-title" className="text-primary mb-6">Request a Consultation</h3>
+      <h3 id="contact-form-title" className="text-primary mb-6">Veterinary Consultation Request Form</h3>
+      <p className="text-gray-600 mb-6">This form is for licensed veterinarians in the US and Canada only.</p>
       
       {/* Contact Information Section */}
       <div className="bg-gray-50 p-6 rounded-lg">
-        <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
+        <h4 className="text-lg font-semibold mb-4">Veterinary Information</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className="label">
@@ -188,7 +195,7 @@ export default function ContactForm() {
           </div>
           <div>
             <label htmlFor="location" className="label">
-              Location *
+              Practice Location *
             </label>
             <input
               type="text"
@@ -199,6 +206,41 @@ export default function ContactForm() {
               onChange={handleChange}
               className="input"
               placeholder="City, State"
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div>
+            <label htmlFor="license_number" className="label">
+              Veterinary License Number *
+            </label>
+            <input
+              type="text"
+              id="license_number"
+              name="license_number"
+              required
+              value={formData.license_number}
+              onChange={handleChange}
+              className="input"
+              placeholder="Your veterinary license number"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label htmlFor="license_state" className="label">
+              License State/Province *
+            </label>
+            <input
+              type="text"
+              id="license_state"
+              name="license_state"
+              required
+              value={formData.license_state}
+              onChange={handleChange}
+              className="input"
+              placeholder="State or Province where licensed"
               aria-required="true"
             />
           </div>
@@ -323,16 +365,13 @@ export default function ContactForm() {
         </div>
       )}
 
-      <div className="text-center">
-        <button
-          type="submit"
-          className="btn btn-primary"
-          disabled={status.type === 'loading'}
-          aria-label={status.type === 'loading' ? 'Sending message...' : 'Send message'}
-        >
-          {status.type === 'loading' ? 'Sending...' : 'Submit Request'}
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors"
+        disabled={status.type === 'loading'}
+      >
+        {status.type === 'loading' ? 'Sending...' : 'Submit Consultation Request'}
+      </button>
     </form>
   );
 } 
